@@ -1,0 +1,42 @@
+@use './colors' as c;
+@use './functions' as f;
+@use './media' as mq;
+
+// Font size
+@mixin o-text-header {
+  --fs-header: 2rem; // 32px
+  font-size: var(--fs-header);
+  font-weight: bolder;
+  text-align: center;
+  letter-spacing: 0.025em;
+  @include mq.mq-up-small() {
+    font-size: calc(var(--fs-header) + 0.5rem);
+  }
+
+  @include mq.mq-up-medium() {
+    text-align: left;
+  }
+}
+
+@mixin o-text-accordion-label {
+  --fs-label: 0.8125rem; //13px
+  font-size: var(--fs-label);
+  font-weight: normal;
+  @include mq.mq-up-small() {
+    font-size: 1rem;
+  }
+}
+
+@mixin o-text-accordion-desc {
+  --fs-desc: 0.75rem; // 12px
+  font-size: var(--fs-desc);
+  font-weight: normal;
+  @include mq.mq-up-small() {
+    font-size: 0.9375rem;
+  }
+}
+
+// Transition
+@mixin trans-3-linear {
+  transition: all 0.3s linear;
+}

@@ -1,0 +1,162 @@
+@use './config' as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #af67e9 0%, #6565e7 74.8%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.l-big-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+// TODO: itu paragraph
+.faq {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-radius: 24px;
+
+  @include mq-up-small {
+    padding: 1rem 2rem;
+  }
+
+  @include mq-up-medium {
+    display: flex;
+    max-width: 921px;
+    padding: 5.5rem 5.6875rem;
+  }
+
+  &__img {
+    position: absolute;
+    top: -110px;
+    left: 0;
+    width: 100%;
+
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      margin: 0 auto;
+    }
+
+    // FIXME: saat di teken accordion, image nya kurang cukup gede
+    @include mq-up-medium {
+      position: absolute;
+      top: 0;
+      left: -8.1rem;
+      width: max-content;
+      .mobile {
+        display: none;
+      }
+
+      .desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 7rem;
+    @include mq-up-medium {
+      margin-top: 0;
+      margin-left: 25rem;
+    }
+  }
+
+  &__header {
+    @include o-text-header;
+    margin-bottom: 1.5rem;
+    @include mq-up-medium {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.accordion {
+  &__item {
+    border-bottom: 1px solid $color-dividers;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.1rem 0 1rem 0;
+    color: $color-accordion-title;
+    cursor: pointer;
+
+    > img {
+      @include trans-3-linear;
+      transform: rotate(0);
+    }
+
+    &:hover {
+      color: $color-accordion-title-hover;
+    }
+  }
+
+  &__label {
+    @include o-text-accordion-label;
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-accordion-title-hover;
+    }
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    // UP
+    @include trans-3-linear;
+
+    p {
+      @include o-text-accordion-desc;
+      max-width: 35ch;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      color: $color-accordion-desc;
+      letter-spacing: -0.2px;
+      @include mq-up-small() {
+        max-width: 45ch;
+      }
+    }
+  }
+
+  &__title-active {
+    > .accordion__label {
+      font-weight: bold;
+      color: $color-text-title;
+    }
+
+    > img {
+      transform: rotate(180deg);
+    }
+
+    + .accordion__body {
+      max-height: 9em;
+      opacity: 1;
+      // DOWN
+      @include trans-3-linear;
+    }
+  }
+}

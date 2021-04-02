@@ -1,0 +1,13 @@
+@use './breakpoints' as *;
+
+@mixin mq-up-small() {
+  @media screen and (min-width: map-get($br-up, small)) {
+    @content;
+  }
+}
+
+@mixin mq-up-medium() {
+  @media screen and (min-width: map-get($br-up, md)) {
+    @content;
+  }
+}
