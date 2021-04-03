@@ -22,7 +22,6 @@ img {
   min-height: 100vh;
   padding: 1.5rem;
 }
-// TODO: itu paragraph
 .faq {
   position: relative;
   width: 100%;
@@ -37,8 +36,29 @@ img {
 
   @include mq-up-medium {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     max-width: 921px;
-    padding: 5.5rem 5.6875rem;
+    padding-top: 4.56rem;
+    padding-right: 5.6875rem;
+    padding-bottom: 5.8125rem;
+    padding-left: 0;
+    background-image: url(../../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: -33.5rem -14rem;
+    background-size: cover;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      width: 191px;
+      height: 184px;
+      content: '';
+      background: url(../../images/illustration-box-desktop.svg) no-repeat;
+      transform: translate(-55%, 125%);
+    }
   }
 
   &__img {
@@ -47,7 +67,8 @@ img {
     left: 0;
     width: 100%;
 
-    .desktop {
+    .box,
+    .women {
       display: none;
     }
 
@@ -55,17 +76,21 @@ img {
       margin: 0 auto;
     }
 
-    // FIXME: saat di teken accordion, image nya kurang cukup gede
     @include mq-up-medium {
-      position: absolute;
+      position: relative;
       top: 0;
-      left: -8.1rem;
-      width: max-content;
+      left: 0;
+      max-width: 480px;
+      height: 100%;
+      overflow: hidden;
+
       .mobile {
         display: none;
       }
 
-      .desktop {
+      .women {
+        position: relative;
+        left: -17%;
         display: block;
       }
     }
@@ -75,7 +100,6 @@ img {
     margin-top: 7rem;
     @include mq-up-medium {
       margin-top: 0;
-      margin-left: 25rem;
     }
   }
 
@@ -138,6 +162,10 @@ img {
       letter-spacing: -0.2px;
       @include mq-up-small() {
         max-width: 45ch;
+      }
+
+      @include mq-up-medium() {
+        padding-right: 0.5rem;
       }
     }
   }
