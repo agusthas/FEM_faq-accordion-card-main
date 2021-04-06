@@ -18,7 +18,12 @@ img {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 1.5rem;
+  padding: 7.5rem 1.5rem 1.5rem 1.5rem;
+}
+@media screen and (min-width: 49em) {
+  .l-big-container {
+    padding: 0;
+  }
 }
 
 .faq {
