@@ -51,6 +51,7 @@ Also i'm trying to force myself using a modular SCSS by secluding mixins, breakp
 ### Continued development
 
 - Adding more accessibility.
+- Creating this with only CSS.
 - Creating this same website but with React! :v:
 
 ### Useful resources
