@@ -129,14 +129,13 @@ img {
     padding: 1.1rem 0 1rem 0;
     color: $color-accordion-title;
     cursor: pointer;
+    background: transparent;
+    border: 0;
+    border-radius: 5px;
 
     > img {
       @include trans-3-linear;
       transform: rotate(0);
-    }
-
-    &:hover {
-      color: $color-accordion-title-hover;
     }
   }
 
