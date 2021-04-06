@@ -141,13 +141,13 @@ img {
   padding: 1.1rem 0 1rem 0;
   color: #4a4b5e;
   cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
 }
 .accordion__title > img {
   transition: all 0.3s linear;
   transform: rotate(0);
-}
-.accordion__title:hover {
-  color: #f47c57;
 }
 .accordion__label {
   --fs-label: 0.8125rem;
