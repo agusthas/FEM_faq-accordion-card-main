@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Solution](https://agusthas.github.io/faq-accordion-card-main/)
+- Live Site URL: [Solution](https://agusthas.github.io/FEM_faq-accordion-card-main/)
 
 ## My process
 
